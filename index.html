@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Syllabix — Your syllabus. Your progress. Your results.</title>
+    <meta name="description" content="Syllabix is a study tracker for Cambridge IGCSE and O-Level students: manage your syllabus, log study time, find weak topics and plan your exams." />
+    <meta name="application-name" content="Syllabix" />
+    <meta name="apple-mobile-web-app-title" content="Syllabix" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="theme-color" content="#F7F8FA" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#0B1220" media="(prefers-color-scheme: dark)" />
+    <meta property="og:title" content="Syllabix" />
+    <meta property="og:description" content="Your syllabus. Your progress. Your results." />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="/icons/og.png" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png" />
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <script>
+      // Apply the saved theme before first paint to avoid a flash
+      try {
+        var t = localStorage.getItem('syllabix-theme') || 'system';
+        var dark = t === 'dark' || (t === 'system' && matchMedia('(prefers-color-scheme: dark)').matches);
+        document.documentElement.dataset.theme = dark ? 'dark' : 'light';
+      } catch (e) {}
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <noscript>Syllabix needs JavaScript turned on.</noscript>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
